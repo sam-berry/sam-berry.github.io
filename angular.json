@@ -1,29 +1,29 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
+  "newProjectRoot": "./client/browser/angular",
   "projects": {
     "portfolio": {
-      "root": "",
-      "sourceRoot": "src",
+      "root": "./client/browser/angular/portfolio",
+      "sourceRoot": "./client/browser/angular/portfolio/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "portfolio-app",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/portfolio",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "outputPath": "./deployables/client/browser/angular/portfolio",
+            "index": "./client/browser/angular/portfolio/src/index.html",
+            "main": "./client/browser/angular/portfolio/src/main.ts",
+            "polyfills": "./client/browser/angular/portfolio/src/polyfills.ts",
+            "tsConfig": "./client/browser/angular/portfolio/src/tsconfig.app.json",
             "assets": [
-              "src/favicon.png",
-              "src/assets"
+              "./client/browser/angular/portfolio/src/favicon.png",
+              "./client/browser/angular/portfolio/src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./client/browser/angular/portfolio/src/styles.css"
             ],
             "scripts": []
           },
@@ -31,8 +31,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "./client/browser/angular/portfolio/src/environments/environment.ts",
+                  "with": "./client/browser/angular/portfolio/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -67,17 +67,17 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "main": "./client/browser/angular/portfolio/src/test.ts",
+            "polyfills": "./client/browser/angular/portfolio/src/polyfills.ts",
+            "tsConfig": "./client/browser/angular/portfolio/src/tsconfig.spec.json",
+            "karmaConfig": "./client/browser/angular/portfolio/src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "./client/browser/angular/portfolio/src/styles.css"
             ],
             "scripts": [],
             "assets": [
-              "src/favicon.png",
-              "src/assets"
+              "./client/browser/angular/portfolio/src/favicon.png",
+              "./client/browser/angular/portfolio/src/assets"
             ]
           }
         },
@@ -85,8 +85,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "./client/browser/angular/portfolio/src/tsconfig.app.json",
+              "./client/browser/angular/portfolio/src/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -96,7 +96,7 @@
       }
     },
     "portfolio-e2e": {
-      "root": "e2e/",
+      "root": "./client/browser/e2e",
       "projectType": "application",
       "architect": {
         "e2e": {
@@ -114,7 +114,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
+            "tsConfig": "./client/browser/e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
